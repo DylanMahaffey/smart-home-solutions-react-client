@@ -1,15 +1,16 @@
 import wretch from "wretch"
 
 export const Dashboard = () => {
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
     const toggleOfficeLights = () => {
-        wretch("http://localhost:8080/office")
+        wretch(serverUrl+"/office")
         .get()
         .json(json => {
             console.log(json)
         })
     }
     const toggleBedroomLight = () => {
-        wretch("http://localhost:8080/bedroom")
+        wretch(serverUrl+"/bedroom")
         .get()
         .json(json => {
             console.log(json)
